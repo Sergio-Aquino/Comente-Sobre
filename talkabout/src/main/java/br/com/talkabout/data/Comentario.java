@@ -1,10 +1,14 @@
 package br.com.talkabout.data;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
 @Table(name = "Comentario")
+@Getter
+@Setter
 public class Comentario {
 
     @Id

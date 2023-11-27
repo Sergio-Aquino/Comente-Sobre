@@ -1,9 +1,13 @@
 package br.com.talkabout.data;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "Postagem")
+@Getter
+@Setter
 public class Postagem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
