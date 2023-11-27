@@ -2,6 +2,7 @@ package br.com.talkabout.data;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
@@ -9,6 +10,7 @@ import lombok.Setter;
 @Table(name = "Comentario")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Comentario {
 
     @Id
