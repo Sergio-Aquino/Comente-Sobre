@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class SalvarUsuarioEndpoint {
     private final UsuarioRepository usuarioRepository;
 
-    @PostMapping("/registro")
+    @PostMapping("/salvar-usuario")
     public String registerUser(@ModelAttribute Usuario usuario) {
         usuarioRepository.save(usuario);
         return "redirect:/";

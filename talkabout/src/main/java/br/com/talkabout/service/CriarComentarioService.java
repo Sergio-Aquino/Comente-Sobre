@@ -18,7 +18,8 @@ public class CriarComentarioService {
         if (postagem.isPresent()) {
             Comentario comentario = new Comentario();
             comentario.setPostagem(postagem.get());
-            comentario.setUsuario(postagemRepository.getFkUsuario());
+            comentario.setUsuario(postagem.get().getUsuario());
+
             ModelAndView mav = new ModelAndView("add-comment");
             mav.addObject("comentario", comentario);
             return mav;

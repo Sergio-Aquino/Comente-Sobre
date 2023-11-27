@@ -3,6 +3,7 @@ package br.com.talkabout.api;
 import br.com.talkabout.service.CriarUsuarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -11,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CriarUsuarioEndpoint {
     CriarUsuarioService criarUsuarioService;
 
-    @PostMapping("/criar-usuario")
+    @GetMapping("/criar-usuario")
     public ModelAndView criarUsuario() {
         return criarUsuarioService.criarUsuario();
     }
