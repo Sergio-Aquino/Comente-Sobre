@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CriarUsuarioEndpoint {
     CriarUsuarioService criarUsuarioService;
 
-    @GetMapping("/criar-usuario")
+    @PostMapping("/criar-usuario")
     public ModelAndView criarUsuario() {
         return criarUsuarioService.criarUsuario();
     }

@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CriarPostagemEndpoint {
     private final CriarPostagemService criarPostagemService;
 
-    @GetMapping("/criar-postagem")
+    @PostMapping("/criar-postagem")
     public ModelAndView criarPostagem() {
        return criarPostagemService.criarPostagem();
     }
