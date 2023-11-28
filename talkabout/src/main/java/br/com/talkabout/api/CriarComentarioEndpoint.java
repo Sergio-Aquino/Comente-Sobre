@@ -11,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @AllArgsConstructor
 public class CriarComentarioEndpoint {
-    PostagemRepository postagemRepository;
     CriarComentarioService criarComentarioService;
 
     @PostMapping("/criar-comentario")
