@@ -24,7 +24,6 @@ public class CriarComentarioService {
             mav.addObject("comentario", comentario);
             return mav;
         }
-
         throw new RuntimeException("Postagem não encontrada");
     }
 }
