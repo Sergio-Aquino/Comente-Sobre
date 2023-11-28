@@ -1,6 +1,5 @@
 package br.com.talkabout.api;
 
-import br.com.talkabout.repository.PostagemRepository;
 import br.com.talkabout.service.CriarComentarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
