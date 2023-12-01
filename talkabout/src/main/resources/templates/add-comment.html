@@ -9,6 +9,7 @@
 <form th:action="@{/salvar-comentario}" th:object="${comentario}" method="post">
     <textarea th:field="*{corpo}" placeholder="Corpo do Comentário"></textarea>
     <input type="email" th:field="*{email}" placeholder="E-mail">
+    <input type="hidden" name="idPostagem" th:value="${postagem.id}">
     <button type="submit">Salvar</button>
 </form>
 </body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Postagens</title>
+</head>
+<body>
+<h1>Postagens</h1>
+
+<div th:each="postagem : ${postagens}">
+    <h2 th:text="${postagem.titulo}"></h2>
+    <p th:text="${postagem.corpo}"></p>
+    <p th:text="${postagem.topico}"></p>
+
+    <div>
+        <a th:href="@{/criar-comentario(idPostagem=${postagem.id})}">Comentar</a>
+    </div>
+</div>
+
+<a href="/criar-topico">Criar novo Tópico</a>
+<a href="/criar-postagem">Criar nova Postagem</a>
+</body>
+</html>
