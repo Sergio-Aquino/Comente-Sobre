@@ -14,6 +14,7 @@
 
     <div th:each="comentario : ${postagem.comentarios}">
         <p th:text="${comentario.corpo}"></p>
+        <p th:text="${comentario.email}"></p>
     </div>
 
     <div>
