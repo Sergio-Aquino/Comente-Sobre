@@ -11,6 +11,7 @@
     <h2 th:text="${postagem.titulo}"></h2>
     <p th:text="${postagem.corpo}"></p>
     <p th:text="${postagem.topico}"></p>
+    <p th:text="${postagem.email}"></p>
 
     <div th:each="comentario : ${postagem.comentarios}">
         <p th:text="${comentario.corpo}"></p>
