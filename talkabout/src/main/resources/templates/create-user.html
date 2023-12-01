@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Criar Usuário</title>
 </head>
 <body>
-    CRIAR USUARIO
+<h1>Criar novo Usuário</h1>
+<form th:action="@{/salvar-usuario}" th:object="${usuario}" method="post">
+    <input type="text" th:field="*{nome}" placeholder="Nome">
+    <input type="password" th:field="*{senha}" placeholder="Senha">
+    <button type="submit">Salvar</button>
+</form>
 </body>
 </html>

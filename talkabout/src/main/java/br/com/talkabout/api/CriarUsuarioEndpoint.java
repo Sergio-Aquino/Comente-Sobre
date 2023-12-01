@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @AllArgsConstructor
 public class CriarUsuarioEndpoint {
-    CriarUsuarioService criarUsuarioService;
+    private CriarUsuarioService criarUsuarioService;
 
     @GetMapping("/criar-usuario")
     public ModelAndView criarUsuario() {

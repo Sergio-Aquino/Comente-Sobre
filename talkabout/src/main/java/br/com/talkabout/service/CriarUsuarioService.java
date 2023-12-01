@@ -8,8 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class CriarUsuarioService {
     public ModelAndView criarUsuario() {
         ModelAndView mav = new ModelAndView("create-user");
-        Usuario novoUsuario = new Usuario();
-        mav.addObject("usuario", novoUsuario);
+        Usuario usuario = new Usuario();
+        mav.addObject("usuario", usuario);
         return mav;
     }
 }

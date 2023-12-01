@@ -15,6 +15,8 @@ public class SalvarUsuarioEndpoint {
 
     @PostMapping("/salvar-usuario")
     public String registerUser(@ModelAttribute Usuario usuario) {
-        return salvarUsuarioService.salvarUsuario(usuario);
+         salvarUsuarioService.salvarUsuario(usuario);
+
+         return "redirect:/";
     }
 }

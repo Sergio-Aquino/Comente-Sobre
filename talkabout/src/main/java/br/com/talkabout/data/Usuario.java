@@ -15,7 +15,7 @@ public class Usuario {
     private int id;
 
     @Column(name = "usuario", nullable = false)
-    private String usuario;
+    private String nome;
 
     @Column(name = "senha", nullable = false)
     private String senha;
