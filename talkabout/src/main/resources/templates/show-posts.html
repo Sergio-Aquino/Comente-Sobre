@@ -12,6 +12,10 @@
     <p th:text="${postagem.corpo}"></p>
     <p th:text="${postagem.topico}"></p>
 
+    <div th:each="comentario : ${postagem.comentarios}">
+        <p th:text="${comentario.corpo}"></p>
+    </div>
+
     <div>
         <a th:href="@{/criar-comentario(idPostagem=${postagem.id})}">Comentar</a>
     </div>
