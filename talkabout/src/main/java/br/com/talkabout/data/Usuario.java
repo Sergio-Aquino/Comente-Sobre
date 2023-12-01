@@ -1,13 +1,12 @@
 package br.com.talkabout.data;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@NoArgsConstructor
 @Entity
-@Table(name = "UsuarioRepository")
+@Table(name = "Usuario")
+@Data
+@NoArgsConstructor
 @Getter
 @Setter
 public class Usuario {

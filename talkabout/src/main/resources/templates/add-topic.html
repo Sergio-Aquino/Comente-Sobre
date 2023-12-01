@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Tópico</title>
+</head>
+<body>
+<h1>Adicionar novo Tópico</h1>
+<form th:action="@{/salvar-topico}" th:object="${topico}" method="post">
+    <label>
+        <input type="text" th:field="*{nome}" placeholder="Insira o nome do topico">
+
+        <button type="submit">Salvar</button>
+    </label>
+</form>
+</body>
+</html>

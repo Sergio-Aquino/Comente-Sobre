@@ -6,7 +6,7 @@ import br.com.talkabout.data.Usuario;
 import br.com.talkabout.service.CriarPostagemService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CriarPostagemEndpoint {
     private final CriarPostagemService criarPostagemService;
 
-    @PostMapping("/criar-postagem")
+    @GetMapping("/criar-postagem")
     public ModelAndView criarPostagem(@RequestParam Usuario usuario, @RequestParam Topico topico) {
        return criarPostagemService.criarPostagem(usuario, topico);
     }

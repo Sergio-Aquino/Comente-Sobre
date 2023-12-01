@@ -1,6 +1,7 @@
 package br.com.talkabout.data;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "Comentario")
+@Data
 @Getter
 @Setter
 @NoArgsConstructor
