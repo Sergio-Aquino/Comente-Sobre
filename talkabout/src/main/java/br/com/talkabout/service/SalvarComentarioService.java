@@ -13,8 +13,7 @@ public class SalvarComentarioService {
     private ComentarioRepository comentarioRepository;
     private PostagemRepository postagemRepository;
     public String salvarComentario(Comentario comentario, int idPostagem) {
-        Postagem postagem = postagemRepository.findById(idPostagem).orElseThrow(() -> new RuntimeException("Postagem não encontrada"));
-        comentario.setPostagem(postagem);
+        comentario.setPostagem(postagemRepository.findById(idPostagem).get());
         comentarioRepository.save(comentario);
         return "redirect:/";
     }
