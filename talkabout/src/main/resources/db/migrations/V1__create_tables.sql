@@ -18,7 +18,8 @@ CREATE TABLE Postagem
     corpo          varchar(300),
     curtida        int          NOT NULL,
     fk_Usuario_id  int          NOT NULL,
-    fk_Topico_id   int          NOT NULL
+    fk_Topico_id   int          NOT NULL,
+    email          varchar(50)  NOT NULL
 );
 
 CREATE TABLE Comentario
@@ -27,7 +28,8 @@ CREATE TABLE Comentario
     corpo     varchar(300) NOT NULL,
     curtida        int          NOT NULL,
     fk_Postagem_id int          NOT NULL,
-    fk_Usuario_id  int          NOT NULL
+    fk_Usuario_id  int          NOT NULL,
+    email          varchar(50)  NOT NULL
 );
 
 ALTER TABLE Postagem

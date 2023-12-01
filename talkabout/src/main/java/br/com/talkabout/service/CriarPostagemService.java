@@ -10,26 +10,21 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class CriarPostagemService {
-    UsuarioRepository usuarioRepository;
-    TopicoRepository topicoRepository;
-    public ModelAndView criarPostagem(@RequestParam Usuario usuario, @RequestParam Topico topico) {
+    private UsuarioRepository usuarioRepository;
+    private TopicoRepository topicoRepository;
+    public ModelAndView criarPostagem() {
         ModelAndView mav = new ModelAndView("add-post");
-        Postagem novaPostagem = new Postagem();
+        Postagem postagem = new Postagem();
+        mav.addObject("postagem", postagem);
 
-        if (usuarioRepository.findById(usuario.getId()).isEmpty()) {
-            throw new RuntimeException("Usuario não encontrado");
-        }
+        List<Topico> topicos = topicoRepository.findAll();
+        mav.addObject("topicos", topicos);
 
-        if (topicoRepository.findById(topico.getId()).isEmpty()) {
-            throw new RuntimeException("Topico não encontrado");
-        }
-
-        novaPostagem.setUsuario(usuario);
-        novaPostagem.setTopico(topico);
-        mav.addObject("postagem", novaPostagem);
         return mav;
     }
 }

@@ -27,11 +27,14 @@ public class Postagem {
     private int curtida;
 
     @ManyToOne
-    @JoinColumn(name = "fk_Usuario_id", nullable = false)
+    @JoinColumn(name = "fk_Usuario_id", nullable = true)
     private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "fk_Topico_id", nullable = false)
     private Topico topico;
+
+    @Column(name = "email", nullable = false)
+    private String email;
 
 }

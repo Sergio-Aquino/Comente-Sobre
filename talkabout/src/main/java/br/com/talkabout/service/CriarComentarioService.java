@@ -14,16 +14,13 @@ import java.util.Optional;
 public class CriarComentarioService {
     PostagemRepository postagemRepository;
     public ModelAndView criarComentario(int idPostagem) {
-        Optional<Postagem> postagem = postagemRepository.findById(idPostagem);
-        if (postagem.isPresent()) {
-            Comentario comentario = new Comentario();
-            comentario.setPostagem(postagem.get());
-            comentario.setUsuario(postagem.get().getUsuario());
+        ModelAndView mav = new ModelAndView("add-comment");
+        Comentario comentario = new Comentario();
 
-            ModelAndView mav = new ModelAndView("add-comment");
-            mav.addObject("comentario", comentario);
-            return mav;
-        }
-        throw new RuntimeException("Postagem não encontrada");
+        Postagem postagem = postagemRepository.findById(idPostagem).orElseThrow(() -> new RuntimeException("Postagem não encontrada"));
+        comentario.setPostagem(postagem);
+
+        mav.addObject("comentario", comentario);
+        return mav;
     }
 }

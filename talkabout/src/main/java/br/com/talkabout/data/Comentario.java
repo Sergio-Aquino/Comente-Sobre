@@ -30,6 +30,9 @@ public class Comentario {
     private Postagem postagem;
 
     @ManyToOne
-    @JoinColumn(name = "fk_Usuario_id", nullable = false)
+    @JoinColumn(name = "fk_Usuario_id", nullable = true)
     private Usuario usuario;
+
+    @Column(name = "email", nullable = false)
+    private String email;
 }

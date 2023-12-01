@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Postagem</title>
+</head>
+<body>
+<h1>Adicionar nova Postagem</h1>
+<form th:action="@{/salvar-postagem}" th:object="${postagem}" method="post">
+    <input type="text" th:field="*{titulo}" placeholder="Titulo da Postagem">
+    <textarea th:field="*{corpo}" placeholder="Corpo da Postagem"></textarea>
+
+    <label for="topico">Escolha um tópico:</label>
+    <select id="topico" th:field="*{topico}">
+        <option th:each="topico : ${topicos}" th:value="${topico.id}" th:text="${topico.nome}"></option>
+    </select>
+
+    <input type="email" th:field="*{email}" placeholder="E-mail">
+    <button type="submit">Salvar</button>
+</form>
+</body>
+</html>
